@@ -1,0 +1,320 @@
+<!-- =========================
+     index.html (전체)
+========================== -->
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Video Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap / Icons / AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="force-motion">
+  <div class="progress-top" id="progressTop"></div>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-blur" id="topNav">
+    <div class="container-xxl">
+      <a class="navbar-brand fw-semibold" href="#top">SeungEon<span class="brand-dot"></span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#works">Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="hero-bg" aria-hidden="true" id="heroBg">
+      <div class="mesh" id="mesh"></div>
+      <div class="blob a" data-depth="0.06"></div>
+      <div class="blob b" data-depth="0.08"></div>
+      <div class="blob c" data-depth="0.05"></div>
+      <canvas id="grain"></canvas>
+      <div class="shade"></div>
+    </div>
+
+    <div class="container-xxl">
+      <div class="row g-4 align-items-center">
+        <div class="col-12 col-lg-4" data-aos="fade-right">
+          <div class="glass face-card">
+            <div class="face-img mb-3">
+              <img src="./assets/img/me.jpg" alt="me"
+                   onerror="this.src='https://images.unsplash.com/photo-1520975958225-0b84b4d56b5a?q=80&w=1200&auto=format&fit=crop'">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <div class="fw-semibold">LEE SEUNG EON</div>
+                <div class="small tone-a">Motion Graphics / Video editor</div>
+              </div>
+              <span class="chip"><i class="bi bi-play-btn me-1"></i> 10 Works</span>
+            </div>
+
+            <hr class="hr-soft" />
+
+            <div class="d-flex flex-wrap gap-2">
+              <span class="chip">Premiere</span>
+              <span class="chip">After Effects</span>
+              <span class="chip">Photoshop</span>
+              <span class="chip">Ableton</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="glass p-4 p-md-5">
+            <h1 class="hero-title">
+              안녕하십니까 저는<br/>
+              <span class="typing" id="typingText" data-text="문구1|문구2|문구3|문구4"></span>
+            </h1>
+
+            <p class="hero-sub tone-a mb-2">
+              리듬 있는 컷과 깔끔한 모션으로 메시지를 빠르게 전달합니다.
+            </p>
+            <p class="hero-sub tone-b mb-4">
+              Works에서 바로 재생해보세요.
+            </p>
+
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-light btn-lg" href="#works"><i class="bi bi-grid-3x3-gap me-2"></i>Works 보기</a>
+              <a class="btn btn-outline-light btn-lg" href="#contact"><i class="bi bi-envelope me-2"></i>Contact</a>
+            </div>
+
+            <div class="mt-4 d-flex gap-3">
+              <a class="text-decoration-none tone-a" href="#"><i class="bi bi-youtube"></i></a>
+              <a class="text-decoration-none tone-d" href="#"><i class="bi bi-instagram"></i></a>
+              <a class="text-decoration-none tone-c" href="#"><i class="bi bi-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- WORKS -->
+  <section id="works" class="section-block section-works">
+    <div class="container-xxl works-wrap section-inner">
+      <div class="text-center" data-aos="fade-up">
+        <div class="section-title">Works</div>
+        <div class="tone-b mb-1">클릭 한 번으로 바로 확인하세요.</div>
+        <div class="tone-a mb-3">브랜디드·광고 중심의 결과물 모음입니다.</div>
+
+        <div class="divider"></div>
+
+        <div class="filter-pills d-flex justify-content-center gap-2 flex-wrap">
+          <button class="btn btn-sm active" type="button" data-filter="All">All</button>
+          <button class="btn btn-sm" type="button" data-filter="Ad">Ad</button>
+          <button class="btn btn-sm" type="button" data-filter="공모전">공모전</button>
+          <button class="btn btn-sm" type="button" data-filter="Motion">Motion</button>
+        </div>
+      </div>
+
+      <div class="works-grid mt-4" id="worksGrid">
+        <article class="work-card featured" data-category="Ad" data-youtube="3xZpri5BqFk" data-aos="zoom-in">
+          <div class="ratio work-media">
+            <div class="work-thumb" style="background-image:url('https://www.youtube.com/watch?v=3xZpri5BqFk');"></div>
+            <div class="hover-play" aria-hidden="true"><i class="bi bi-play-fill"></i></div>
+          </div>
+          <div class="work-body">
+            <div>
+              <h3 class="work-title">NIKE</h3>
+              <p class="work-desc">광고/브랜디드</p>
+            </div>
+            <span class="chip">Ad</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="Ad" data-youtube="B0MPSpZJImw" data-aos="fade-up">
+          <div class="ratio work-media">
+            <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="hover-play" aria-hidden="true"><i class="bi bi-play-fill"></i></div>
+          </div>
+          <div class="work-body">
+            <div><h3 class="work-title">JUNO 앱광고</h3><p class="work-desc">광고/브랜디드</p></div>
+            <span class="chip">AD</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="Ad" data-youtube="GBnpl7hXi9w" data-aos="fade-up" data-aos-delay="50">
+          <div class="ratio work-media">
+            <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="hover-play" aria-hidden="true"><i class="bi bi-play-fill"></i></div>
+          </div>
+          <div class="work-body">
+            <div><h3 class="work-title">Mercedes Benz</h3><p class="work-desc">촬영/편집/광고</p></div>
+            <span class="chip">AD</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="Motion" data-youtube="yeI7rxjWVz4" data-aos="fade-up">
+          <div class="ratio work-media">
+            <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1526481280695-3c687fd643ed?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="hover-play" aria-hidden="true"><i class="bi bi-play-fill"></i></div>
+          </div>
+          <div class="work-body">
+            <div><h3 class="work-title">포스터 모션 그래픽</h3><p class="work-desc">모션 그래픽</p></div>
+            <span class="chip">Motion</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="Ad" data-youtube="xPuY_7-4AFs" data-aos="fade-up" data-aos-delay="50">
+          <div class="ratio work-media">
+            <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="hover-play" aria-hidden="true"><i class="bi bi-play-fill"></i></div>
+          </div>
+          <div class="work-body">
+            <div><h3 class="work-title">학교홍보영상</h3><p class="work-desc">촬영/편집</p></div>
+            <span class="chip">Ad</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="Motion" data-youtube="d8qn72eAV4U" data-aos="fade-up">
+          <div class="ratio work-media">
+            <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="hover-play" aria-hidden="true"><i class="bi bi-play-fill"></i></div>
+          </div>
+          <div class="work-body">
+            <div><h3 class="work-title">슬라이드쇼 모션그래픽</h3><p class="work-desc">촬영/편집/기획</p></div>
+            <span class="chip">Motion</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="공모전" data-youtube="OH5js60AGpM" data-aos="fade-up" data-aos-delay="50">
+          <div class="ratio work-media">
+            <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="hover-play" aria-hidden="true"><i class="bi bi-play-fill"></i></div>
+          </div>
+          <div class="work-body">
+            <div><h3 class="work-title">한일60주년교류 sns어워드</h3><p class="work-desc">촬영/편집/기획</p></div>
+            <span class="chip">공모전</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="공모전" data-youtube="k8fEJEMKkG4" data-aos="fade-up">
+          <div class="ratio work-media">
+            <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="hover-play" aria-hidden="true"><i class="bi bi-play-fill"></i></div>
+          </div>
+          <div class="work-body">
+            <div><h3 class="work-title">하이라이트 tv ai공모전</h3><p class="work-desc">ai사용 광고 공모전</p></div>
+            <span class="chip">공모전</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="Ad" data-youtube="4OvsXVUW1LY" data-aos="fade-up" data-aos-delay="50">
+          <div class="ratio work-media">
+            <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="hover-play" aria-hidden="true"><i class="bi bi-play-fill"></i></div>
+          </div>
+          <div class="work-body">
+            <div><h3 class="work-title">뮤지엄원</h3><p class="work-desc">촬영/기획/제작</p></div>
+            <span class="chip">Ad</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="Ad" data-youtube="-cL5x44uFLM" data-aos="fade-up">
+          <div class="ratio work-media">
+            <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1497015289639-54688650d173?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="hover-play" aria-hidden="true"><i class="bi bi-play-fill"></i></div>
+          </div>
+          <div class="work-body">
+            <div><h3 class="work-title">커피이야기</h3><p class="work-desc">편집/기획/제작</p></div>
+            <span class="chip">AD</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section-block section-contact">
+    <div class="container-xxl section-inner">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8" data-aos="fade-up">
+          <div class="glass p-4 p-md-5">
+            <div class="section-title mb-2">Contact</div>
+
+            <p class="mb-2 tone-c">작업 문의 / 협업 제안 환영합니다.</p>
+            <p class="mb-4 tone-a">AM09:00~PM18:00</p>
+
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-outline-light" href="#"><i class="bi bi-envelope me-2"></i>letronome1996@gmail.com</a>
+          
+            </div>
+
+            <hr class="hr-soft my-4" />
+
+            <p class="mb-0 tone-d small">
+              * 영상이 보이지않는다면 그 경우 youtube에서 열기 버튼 클릭해주세요.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container-xxl d-flex justify-content-between align-items-center">
+      <div>© <span id="year"></span> SeungEon Portfolio</div>
+      <div class="small"></div>
+    </div>
+  </footer>
+
+  <!-- Work Modal -->
+  <div class="modal fade" id="workModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-semibold">Work</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="video-stage">
+            <div class="video-box">
+              <iframe id="ytFrame"
+                src=""
+                title="YouTube video"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="modal-foot">
+            <div class="small tone-a">※ 카드 전체 클릭으로 바로 재생됩니다.</div>
+            <a id="openYoutube" class="open-youtube" href="#" target="_blank" rel="noopener">
+              <i class="bi bi-box-arrow-up-right me-1"></i> YouTube에서 열기
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS libs -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Custom JS -->
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
